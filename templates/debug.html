@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG System Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .results { margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 4px; }
+        .error { color: red; }
+        .success { color: green; }
+        .loading { color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RAG System Debug Test</h1>
+        
+        <div class="form-group">
+            <label for="question">Test Question:</label>
+            <textarea id="question" rows="3" placeholder="What are the eligibility requirements for banking jobs?">What are the eligibility requirements for banking jobs?</textarea>
+        </div>
+        
+        <button onclick="testQuery()">Test Query</button>
+        <button onclick="testHealth()">Test Health</button>
+        <button onclick="testCategories()">Test Categories</button>
+        
+        <div id="results" class="results" style="display: none;">
+            <h3>Results:</h3>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        function showResult(content, type = 'success') {
+            const resultsDiv = document.getElementById('results');
+            const contentDiv = document.getElementById('resultContent');
+            
+            resultsDiv.style.display = 'block';
+            contentDiv.innerHTML = `<div class="${type}">${content}</div>`;
+        }
+
+        async function testQuery() {
+            const question = document.getElementById('question').value;
+            
+            showResult('Loading...', 'loading');
+            
+            try {
+                console.log('Sending query:', question);
+                
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: question,
+                        n_results: 3
+                    })
+                });
+                
+                console.log('Response status:', response.status);
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                if (data.error) {
+                    showResult(`Error: ${data.error}`, 'error');
+                } else {
+                    let result = `<strong>Query:</strong> ${data.query}<br>`;
+                    result += `<strong>Confidence:</strong> ${(data.confidence_score * 100).toFixed(1)}%<br>`;
+                    result += `<strong>Answer:</strong><br>${data.answer}<br><br>`;
+                    result += `<strong>Relevant Jobs (${data.relevant_jobs.length}):</strong><br>`;
+                    
+                    data.relevant_jobs.forEach((job, index) => {
+                        const metadata = job.metadata || {};
+                        result += `${index + 1}. ${metadata.exam_name || 'N/A'} - ${metadata.organization || 'N/A'}<br>`;
+                    });
+                    
+                    showResult(result, 'success');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showResult(`Network Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testHealth() {
+            showResult('Testing health...', 'loading');
+            
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                
+                if (data.status === 'healthy') {
+                    showResult(`Health Check: ${data.status}<br>Total Jobs: ${data.total_jobs}`, 'success');
+                } else {
+                    showResult(`Health Check Failed: ${data.message}`, 'error');
+                }
+            } catch (error) {
+                showResult(`Health Check Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testCategories() {
+            showResult('Loading categories...', 'loading');
+            
+            try {
+                const response = await fetch('/api/categories');
+                const data = await response.json();
+                
+                if (data.error) {
+                    showResult(`Error: ${data.error}`, 'error');
+                } else {
+                    let result = `<strong>Categories (${data.total_categories}):</strong><br>`;
+                    data.categories.forEach(cat => {
+                        result += `• ${cat}<br>`;
+                    });
+                    showResult(result, 'success');
+                }
+            } catch (error) {
+                showResult(`Categories Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-test on page load
+        window.onload = function() {
+            console.log('Page loaded, testing health...');
+            testHealth();
+        };
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,1599 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Amogh\\Downloads\\ragpro-main\\ragpro-main']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [8368] using WatchFiles
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [5600]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:4 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5600]
+INFO:watchfiles.main:25 changes detected
+WARNING:  WatchFiles detected changes in 'rag_generator.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1322, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1262, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1532, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1506, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1605, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 147, in _path_stat
+KeyboardInterrupt
+INFO:     Started server process [11208]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:3 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11208]
+INFO:watchfiles.main:8 changes detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1085, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1208, in path_stats
+  File "<frozen importlib._bootstrap_external>", line 147, in _path_stat
+KeyboardInterrupt
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:     Started server process [20728]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:7 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [20728]
+INFO:watchfiles.main:16 changes detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1128, in get_code
+  File "<frozen importlib._bootstrap_external>", line 757, in _compile_bytecode
+KeyboardInterrupt
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [20260]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:3 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [20260]
+INFO:watchfiles.main:8 changes detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1191, in get_data
+KeyboardInterrupt
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:     Started server process [17964]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:7 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [17964]
+INFO:watchfiles.main:8 changes detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\_exceptions.py", line 53, in <module>
+    class _UFuncBinaryResolutionError(_UFuncNoLoopError):
+KeyboardInterrupt
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [21156]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:watchfiles.main:3 changes detected
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_generator.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21156]
+INFO:watchfiles.main:27 changes detected
+WARNING:  WatchFiles detected changes in 'rag_generator.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\_exceptions.py", line 68, in <module>
+    class _UFuncCastingError(UFuncTypeError):
+KeyboardInterrupt
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [21524]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:watchfiles.main:3 changes detected
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21524]
+INFO:watchfiles.main:23 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1322, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1262, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1532, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1506, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1638, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 161, in _path_isfile
+  File "<frozen importlib._bootstrap_external>", line 153, in _path_is_mode_type
+  File "<frozen importlib._bootstrap_external>", line 147, in _path_stat
+KeyboardInterrupt
+INFO:     Started server process [11616]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11616]
+INFO:watchfiles.main:16 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\_exceptions.py", line 53, in <module>
+    class _UFuncBinaryResolutionError(_UFuncNoLoopError):
+KeyboardInterrupt
+INFO:watchfiles.main:7 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [21468]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:3 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_generator.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21468]
+INFO:watchfiles.main:9 changes detected
+WARNING:  WatchFiles detected changes in 'rag_generator.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+KeyboardInterrupt
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:     Started server process [6260]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:4 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_generator.py', 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [6260]
+INFO:watchfiles.main:37 changes detected
+WARNING:  WatchFiles detected changes in 'rag_generator.py', 'rag_system.py', 'vector_database.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 8, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1191, in get_data
+KeyboardInterrupt
+INFO:watchfiles.main:9 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [21992]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:watchfiles.main:3 changes detected
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21992]
+INFO:watchfiles.main:23 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 9, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1128, in get_code
+  File "<frozen importlib._bootstrap_external>", line 757, in _compile_bytecode
+KeyboardInterrupt
+INFO:     Started server process [8800]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+ERROR:    Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+INFO:watchfiles.main:13 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [16084]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:3 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [16084]
+INFO:watchfiles.main:8 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 9, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+KeyboardInterrupt
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [1324]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1324]
+INFO:watchfiles.main:16 changes detected
+WARNING:  WatchFiles detected changes in 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 9, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+KeyboardInterrupt
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:     Started server process [1812]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:4 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1812]
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 10, in <module>
+    from vector_database import VectorDatabase, JobRetriever
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\vector_database.py", line 8, in <module>
+    from sentence_transformers import SentenceTransformer
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 10, in <module>
+    from sentence_transformers.backend import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\backend\__init__.py", line 3, in <module>
+    from .load import load_onnx_model, load_openvino_model
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\backend\load.py", line 7, in <module>
+    from transformers.configuration_utils import PretrainedConfig
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\transformers\__init__.py", line 27, in <module>
+    from . import dependency_versions_check
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\transformers\dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\transformers\utils\__init__.py", line 24, in <module>
+    from .auto_docstring import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\transformers\utils\auto_docstring.py", line 30, in <module>
+    from .generic import ModelOutput
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\transformers\utils\generic.py", line 51, in <module>
+    import torch
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\torch\__init__.py", line 281, in <module>
+    _load_dll_libraries()
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\torch\__init__.py", line 240, in _load_dll_libraries
+    if platform.machine() != "ARM64":
+       ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\platform.py", line 1024, in machine
+    return uname().machine
+           ^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\platform.py", line 922, in uname
+    release, version, csd, ptype = win32_ver()
+                                   ^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\platform.py", line 450, in win32_ver
+    version, csd, ptype, is_client = _win32_ver(version, csd, ptype)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\platform.py", line 388, in _win32_ver
+    (version, product_type, ptype, spmajor, spminor)  = _wmi_query(
+                                                        ^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\platform.py", line 327, in _wmi_query
+    data = _wmi.exec_query("SELECT {} FROM {}".format(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+INFO:watchfiles.main:5 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:5 changes detected
+INFO:     Started server process [23000]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:watchfiles.main:8 changes detected
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:7 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'vector_database.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23000]
+INFO:watchfiles.main:23 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 9, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+KeyboardInterrupt
+INFO:     Started server process [22864]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22864]
+INFO:watchfiles.main:25 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 9, in <module>
+    from data_processor import JobDataProcessor, JobData
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\data_processor.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    __import__(_dependency)
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__init__.py", line 125, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\__init__.py", line 22, in <module>
+    from . import multiarray
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\numpy\_core\multiarray.py", line 11, in <module>
+    from . import _multiarray_umath, overrides
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+KeyboardInterrupt
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\multiprocessing\spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\api_server.py", line 10, in <module>
+    from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\rag_system.py", line 10, in <module>
+    from vector_database import VectorDatabase, JobRetriever
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\vector_database.py", line 8, in <module>
+    from sentence_transformers import SentenceTransformer
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 10, in <module>
+    from sentence_transformers.backend import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\backend\__init__.py", line 5, in <module>
+    from .quantize import export_dynamic_quantized_onnx_model, export_static_quantized_openvino_model
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\backend\quantize.py", line 7, in <module>
+    from sentence_transformers.util import disable_datasets_caching, is_datasets_available
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\util\__init__.py", line 15, in <module>
+    from .retrieval import (
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\util\retrieval.py", line 13, in <module>
+    from .similarity import cos_sim
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sentence_transformers\util\similarity.py", line 5, in <module>
+    from sklearn.metrics import pairwise_distances
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\__init__.py", line 73, in <module>
+    from .base import clone  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\base.py", line 19, in <module>
+    from .utils._metadata_requests import _MetadataRequester, _routing_enabled
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\utils\__init__.py", line 9, in <module>
+    from ._chunking import gen_batches, gen_even_slices
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\utils\_chunking.py", line 11, in <module>
+    from ._param_validation import Interval, validate_params
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 17, in <module>
+    from .validation import _is_arraylike_not_scalar
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\utils\validation.py", line 21, in <module>
+    from ..utils._array_api import _asarray_with_order, _is_numpy_namespace, get_namespace
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\sklearn\utils\_array_api.py", line 14, in <module>
+    import scipy.special as special
+  File "C:\Users\Amogh\Downloads\ragpro-main\ragpro-main\.venv\Lib\site-packages\scipy\special\__init__.py", line 784, in <module>
+    from . import _ufuncs
+  File "scipy/special/_ufuncs.pyx", line 1, in init scipy.special._ufuncs
+    # This file is automatically generated by _generate_pyx.py.
+  File "<frozen importlib._bootstrap>", line 645, in parent
+KeyboardInterrupt
+INFO:watchfiles.main:17 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:     Started server process [980]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:4 changes detected
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'vector_database.py', 'rag_system.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [980]
+INFO:watchfiles.main:19 changes detected
+INFO:     Started server process [14292]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+INFO:watchfiles.main:7 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:7 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:8 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:34 changes detected
+INFO:watchfiles.main:1 change detected

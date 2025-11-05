@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>Simple API Test</h1>
+    <button onclick="testAPI()">Test API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            console.log('Testing API...');
+            
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: 'What are banking jobs?',
+                        n_results: 2
+                    })
+                });
+                
+                console.log('Response status:', response.status);
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                document.getElementById('result').innerHTML = 
+                    '<h3>Success!</h3>' +
+                    '<p><strong>Query:</strong> ' + data.query + '</p>' +
+                    '<p><strong>Confidence:</strong> ' + (data.confidence_score * 100).toFixed(1) + '%</p>' +
+                    '<p><strong>Answer:</strong></p>' +
+                    '<pre>' + data.answer + '</pre>' +
+                    '<p><strong>Jobs Found:</strong> ' + data.relevant_jobs.length + '</p>';
+                    
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = '<p style="color: red;">Error: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

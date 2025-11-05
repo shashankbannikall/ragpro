@@ -1,0 +1,30 @@
+INFO:     Started server process [11068]
+INFO:     Waiting for application startup.
+INFO:api_server:Starting Government Job RAG API...
+INFO:rag_system:Initializing Government Job RAG System...
+INFO:vector_database:Loading embedding model: all-MiniLM-L6-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+INFO:vector_database:Loaded existing collection: government_jobs
+INFO:rag_generator:Initialized Simple RAG Generator (no external LLM)
+INFO:data_processor:Loading jobs from admin_jobs.json
+INFO:data_processor:Loading jobs from auto_jobs.json
+INFO:data_processor:Loading jobs from banking_jobs.json
+INFO:data_processor:Loading jobs from defence_jobs.json
+INFO:data_processor:Loading jobs from health_jobs.json
+INFO:data_processor:Loading jobs from judiciary_jobs.json
+INFO:data_processor:Loading jobs from nta_jobs.json
+INFO:data_processor:Loading jobs from psu.json
+INFO:data_processor:Loading jobs from research_jobs.json
+INFO:data_processor:Loading jobs from rrb_exams.json
+INFO:data_processor:Loading jobs from ssc_exams.json
+INFO:data_processor:Loading jobs from upsc_jobs.json
+INFO:data_processor:Total jobs loaded: 121
+INFO:rag_system:Database already contains 121 jobs
+INFO:rag_system:RAG system initialized successfully!
+INFO:api_server:RAG system initialized successfully!
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+INFO:     Waiting for application shutdown.
+INFO:api_server:Shutting down Government Job RAG API...
+INFO:     Application shutdown complete.

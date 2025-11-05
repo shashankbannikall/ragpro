@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Job RAG System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+        }
+
+        .error {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .success {
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .job-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .job-org {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .confidence-score {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #27ae60;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Government Job RAG System</h1>
+            <p>Intelligent Job Search & Recommendations</p>
+        </div>
+
+        <div class="main-content">
+            <h2>Ask Questions About Government Jobs</h2>
+            
+            <form id="queryForm">
+                <div class="form-group">
+                    <label for="question">Your Question:</label>
+                    <textarea id="question" placeholder="e.g., What are the eligibility requirements for banking jobs?" required>What are the eligibility requirements for banking jobs?</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="n_results">Number of Results:</label>
+                    <select id="n_results">
+                        <option value="3">3</option>
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">Ask Question</button>
+                <button type="button" class="btn" onclick="clearForm()">Clear</button>
+            </form>
+            
+            <div id="results" class="results" style="display: none;">
+                <h3>Answer:</h3>
+                <div id="resultContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form submission
+        document.getElementById('queryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const question = document.getElementById('question').value;
+            const n_results = parseInt(document.getElementById('n_results').value);
+            
+            console.log('Submitting query:', question);
+            showLoading();
+            
+            try {
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: question,
+                        n_results: n_results
+                    })
+                });
+                
+                console.log('Response status:', response.status);
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                if (data.error) {
+                    showError(data.error);
+                } else {
+                    showSuccess(data);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showError('Network Error: ' + error.message);
+            }
+        });
+
+        function showLoading() {
+            const resultsDiv = document.getElementById('results');
+            const contentDiv = document.getElementById('resultContent');
+            
+            resultsDiv.style.display = 'block';
+            contentDiv.innerHTML = '<div class="loading">Loading...</div>';
+        }
+
+        function showError(message) {
+            const resultsDiv = document.getElementById('results');
+            const contentDiv = document.getElementById('resultContent');
+            
+            resultsDiv.style.display = 'block';
+            contentDiv.innerHTML = `<div class="error">Error: ${message}</div>`;
+        }
+
+        function showSuccess(data) {
+            const resultsDiv = document.getElementById('results');
+            const contentDiv = document.getElementById('resultContent');
+            
+            resultsDiv.style.display = 'block';
+            
+            let result = `<div class="confidence-score">Confidence: ${(data.confidence_score * 100).toFixed(1)}%</div>`;
+            result += `<div style="white-space: pre-wrap; line-height: 1.6; margin-bottom: 20px;">${data.answer}</div>`;
+            
+            if (data.relevant_jobs && data.relevant_jobs.length > 0) {
+                result += '<h4>Relevant Jobs:</h4>';
+                data.relevant_jobs.forEach((job, index) => {
+                    const metadata = job.metadata || {};
+                    result += `
+                        <div class="job-card">
+                            <div class="job-title">${index + 1}. ${metadata.exam_name || 'N/A'}</div>
+                            <div class="job-org">${metadata.organization || 'N/A'}</div>
+                            <div style="margin-top: 10px;">
+                                <strong>Category:</strong> ${metadata.category || 'N/A'}<br>
+                                <strong>Eligibility:</strong> ${metadata.eligibility || 'N/A'}<br>
+                                <strong>Salary:</strong> ${metadata.salary_range || 'N/A'}<br>
+                                <strong>Website:</strong> <a href="${metadata.official_website || '#'}" target="_blank">${metadata.official_website || 'N/A'}</a>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            contentDiv.innerHTML = result;
+        }
+
+        function clearForm() {
+            document.getElementById('queryForm').reset();
+            document.getElementById('results').style.display = 'none';
+        }
+
+        // Test on page load
+        window.onload = function() {
+            console.log('Page loaded successfully');
+        };
+    </script>
+</body>
+</html>
+
+
+
