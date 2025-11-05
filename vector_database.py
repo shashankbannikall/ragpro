@@ -35,11 +35,18 @@ class VectorDatabase:
     def _init_chroma_db(self):
         """Initialize ChromaDB client and collection"""
         try:
-            # Create ChromaDB client
-            self.chroma_client = chromadb.PersistentClient(
-                path=self.persist_directory,
-                settings=Settings(anonymized_telemetry=False)
-            )
+            # Create ChromaDB client (persistent or in-memory) based on env
+            use_persist = os.getenv("RAG_PERSIST", "true").lower() == "true"
+            persist_path = os.getenv("VECTOR_DB_PATH", self.persist_directory)
+            if use_persist:
+                self.chroma_client = chromadb.PersistentClient(
+                    path=persist_path,
+                    settings=Settings(anonymized_telemetry=False)
+                )
+            else:
+                self.chroma_client = chromadb.Client(
+                    Settings(anonymized_telemetry=False)
+                )
             
             # Get or create collection
             try:

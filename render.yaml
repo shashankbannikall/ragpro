@@ -11,8 +11,19 @@ services:
         value: "1"
       - key: HF_HUB_DISABLE_SYMLINKS_WARNING
         value: "1"
-    disks:
-      - name: chroma-db
-        mountPath: /opt/render/project/src/chroma_db
-        sizeGB: 1
+      # In-memory Chroma (no persistence): set false
+      - key: RAG_PERSIST
+        value: "false"
+      # Optional caches to avoid symlink warnings and write to ephemeral storage
+      - key: HF_HOME
+        value: "/tmp"
+      - key: SENTENCE_TRANSFORMERS_HOME
+        value: "/tmp"
+      - key: WEB_CONCURRENCY
+        value: "1"
+      # For /tmp persistence between requests on same instance (no attached disk), set:
+      # - key: RAG_PERSIST
+      #   value: "true"
+      # - key: VECTOR_DB_PATH
+      #   value: "/tmp/chroma_db"
 

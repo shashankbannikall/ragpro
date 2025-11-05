@@ -6,6 +6,7 @@ from typing import List, Dict, Any, Optional
 import logging
 import uvicorn
 from contextlib import asynccontextmanager
+import asyncio
 
 from rag_system import GovernmentJobRAG, RAGConfig, create_default_config
 
@@ -15,27 +16,37 @@ logger = logging.getLogger(__name__)
 
 # Global RAG system instance
 rag_system: Optional[GovernmentJobRAG] = None
+_rag_init_task: Optional[asyncio.Task] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Manage application lifespan"""
-    global rag_system
-    
-    # Startup
-    logger.info("Starting Government Job RAG API...")
-    try:
-        config = create_default_config()
-        rag_system = GovernmentJobRAG(config)
-        rag_system.initialize()
-        logger.info("RAG system initialized successfully!")
-    except Exception as e:
-        logger.error(f"Failed to initialize RAG system: {e}")
-        raise
-    
+    """Manage application lifespan with non-blocking initialization."""
+    global rag_system, _rag_init_task
+
+    async def _init_rag_async():
+        """Initialize RAG in the background to avoid blocking port binding."""
+        global rag_system
+        logger.info("Initializing RAG system in background task...")
+        try:
+            config = create_default_config()
+            rag_system = GovernmentJobRAG(config)
+            # Run sync init in thread to avoid blocking event loop
+            loop = asyncio.get_running_loop()
+            await loop.run_in_executor(None, rag_system.initialize)
+            logger.info("RAG system initialized successfully!")
+        except Exception as e:
+            logger.error(f"Failed to initialize RAG system: {e}")
+
+    # Startup (schedule init, do not await)
+    logger.info("Starting Government Job RAG API... scheduling background init")
+    _rag_init_task = asyncio.create_task(_init_rag_async())
+
     yield
-    
+
     # Shutdown
     logger.info("Shutting down Government Job RAG API...")
+    if _rag_init_task and not _rag_init_task.done():
+        _rag_init_task.cancel()
 
 # Create FastAPI app
 app = FastAPI(

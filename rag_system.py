@@ -414,9 +414,10 @@ class RAGSystemManager:
 
 def create_default_config() -> RAGConfig:
     """Create default configuration"""
+    vector_db_path = os.getenv("VECTOR_DB_PATH", "./chroma_db")
     return RAGConfig(
         embedding_model="all-MiniLM-L6-v2",
-        vector_db_path="./chroma_db",
+        vector_db_path=vector_db_path,
         collection_name="government_jobs",
         llm_model="gpt-3.5-turbo",
         llm_temperature=0.7,
